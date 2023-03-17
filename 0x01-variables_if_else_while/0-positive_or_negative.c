@@ -27,10 +27,6 @@ int main(void)
 	{
 		printf("%d is negative\n", n);
 	}
-	else
-	{
-		printf("invalid number\n");
-	}
 
 	return (0);
 }
