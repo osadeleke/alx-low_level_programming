@@ -19,7 +19,11 @@ int main(void)
 		}
 		else if (a % 5 == 0 && a % 3 != 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
+			if (a != 100)
+			{
+				printf(" ");
+			}
 		}
 		else if (a % 5 == 0 && a % 3 == 0)
 		{
