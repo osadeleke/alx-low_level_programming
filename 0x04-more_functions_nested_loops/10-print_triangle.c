@@ -3,7 +3,7 @@
 /**
  * print_triangle - prints a triangle on terminal using #
  * @size: size of triangle
- * 
+ *
  * Return: void
  */
 
