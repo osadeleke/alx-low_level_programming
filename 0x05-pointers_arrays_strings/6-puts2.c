@@ -8,8 +8,11 @@
 
 void puts2(char *str)
 {
-	int i, n;
+	int i, j, n;
 
+	j = 0;
+	if (str[j] != '\0')
+	{
 	_putchar(str[0]);
 
 	i = 0;
@@ -24,6 +27,10 @@ void puts2(char *str)
 		{
 			_putchar(str[n]);
 		}
+	}
+	}
+	else
+	{
 	}
 	_putchar('\n');
 }
