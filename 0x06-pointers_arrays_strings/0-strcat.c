@@ -25,7 +25,7 @@ char *_strcat(char *dest, char *src)
 	}
 
 	l = 0;
-	for (k = i; k >= i && k < j + 1; k++)
+	for (k = i; k >= i && k <= j + 1; k++)
 	{
 		dest[k] = src[l];
 		l++;
