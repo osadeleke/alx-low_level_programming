@@ -5,11 +5,13 @@
  * @dest: first string
  * @src: second string
  *
- * Return: Dest string.
+ * Return: String.
  */
 
 char *_strcat(char *dest, char *src)
 {
+	char *s = dest;
+
 	while (*dest != '\0')
 	{
 		dest++;
@@ -24,5 +26,5 @@ char *_strcat(char *dest, char *src)
 
 	*dest = '\0';
 
-	return (dest);
+	return (s);
 }
