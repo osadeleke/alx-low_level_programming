@@ -4,6 +4,7 @@
  * _memcpy - function to copy memory area
  * @dest: memory area to copy from
  * @src: memory area to copy to
+ * @n: number of bytes to copy
  *
  * Return: Dest if successful
  */
