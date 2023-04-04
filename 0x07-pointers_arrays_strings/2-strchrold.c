@@ -1,22 +1,16 @@
 #include "main.h"
 
 /**
- * _strchr - locates a character in string
+ * _strchr - locates a character in string]
  * @s: string
  * @c: character to be located
- * 
- * Return: character plus
+ *
+ * Return: string after character
  */
 
 char *_strchr(char *s, char c)
 {
-	int i = 0, j = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	while (j <= i)
+	while (*s)
 	{
 		if (*s == c)
 		{
@@ -24,5 +18,6 @@ char *_strchr(char *s, char c)
 		}
 		s++;
 	}
+
 	return (s + 1);
 }
