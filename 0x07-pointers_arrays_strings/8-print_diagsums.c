@@ -13,7 +13,7 @@
 void print_diagsums(int *a, int size)
 {
 	int i;
-	unsigned long int j = 0, k = 0;
+	long int j = 0, k = 0;
 
 	for (i = 0; i < size; i++)
 	{
@@ -21,5 +21,5 @@ void print_diagsums(int *a, int size)
 		j = j + *(a + i * size - i);
 	}
 
-	printf("%lu, %lu\n", k, j);
+	printf("%ld, %ld\n", k, j);
 }
