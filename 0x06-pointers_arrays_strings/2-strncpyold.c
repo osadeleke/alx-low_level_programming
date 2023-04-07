@@ -13,22 +13,11 @@ char *_strncpy(char *dest, char *src, int n)
 	char *p = dest;
 	int i;
 
-	if (*src == '\0')
+	for (i = 0; i < n; i++)
 	{
-		for (i = 0; i < n; i++)
-		{
-			*p = '\0';
-			p++;
-		}
-	}
-
-	else {
-		for (i = 0; i < n; i++)
-		{
-			*p = *src;
-			src++;
-			p++;
-		}
+		*p = *src;
+		src++;
+		p++;
 	}
 
 	return (dest);
