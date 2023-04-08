@@ -12,6 +12,7 @@ char *leet(char *src)
 	int i;
 	char *mpp = "aAeEoOtTlL";
 	char *new = "4433007711";
+	char *p = src;
 
 	while (*src)
 	{
@@ -26,5 +27,5 @@ char *leet(char *src)
 		}
 		src++;
 	}
-	return (src);
+	return (p);
 }
