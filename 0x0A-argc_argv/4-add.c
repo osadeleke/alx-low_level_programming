@@ -13,6 +13,8 @@
 int main(int argc, char *argv[])
 {
 	int i, sum = 0;
+	char *n;
+	int number;
 
 	if (argc == 1)
 	{
@@ -23,9 +25,10 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
+			number = strtol(argv[i], &n, 10);
 			if (isdigit(*argv[i]))
 			{
-				sum = sum + atoi(argv[i]);
+				sum = sum + number;
 			}
 			else
 			{
