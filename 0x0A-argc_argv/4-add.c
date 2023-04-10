@@ -13,22 +13,18 @@
 int main(int argc, char *argv[])
 {
 	int i, sum = 0;
-	char *n;
-	int number;
 
 	if (argc == 1)
 	{
 		printf("0\n");
-		return (0);
 	}
-	else if (argc > 1)
+	else if
 	{
 		for (i = 1; i < argc; i++)
 		{
-			number = strtol(argv[i], &n, 10);
 			if (isdigit(*argv[i]))
 			{
-				sum = sum + number;
+				sum = sum + atoi(argv[i]);
 			}
 			else
 			{
