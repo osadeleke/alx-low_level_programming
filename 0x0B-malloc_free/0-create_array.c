@@ -24,10 +24,16 @@ char *create_array(unsigned int size, char c)
 		p = malloc(sizeof(char) * size);
 	}
 
-	for (i = 0; i < size; i++)
+	if (p == NULL)
 	{
-		*(p + i) = c;
+		return (0);
 	}
-
+	else
+	{
+		for (i = 0; i < size; i++)
+		{
+			*(p + i) = c;
+		}
+	}
 	return (p);
 }
