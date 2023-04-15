@@ -1,21 +1,21 @@
 #include "main.h"
 
 /**
- * sqrt - find the square root number
+ * _sqrt - find the square root number
  * @n: number
  * @a: square root guesses
  *
  * Return: a if square root found and -1 otherwise
  */
 
-int sqrt(int n, int a)
+int _sqrt(int n, int a)
 {
 	if (a * a > n)
 		return (-1);
 	if (a * a == n)
 		return (a);
 
-	return (sqrt(n, a + 1));
+	return (_sqrt(n, a + 1));
 }
 
 /**
@@ -31,5 +31,5 @@ int _sqrt_recursion(int n)
 	if (n < 0)
 		return (-1);
 
-	return (sqrt(n, 0));
+	return (_sqrt(n, 0));
 }
