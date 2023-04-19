@@ -1,12 +1,12 @@
 #include "function_pointers.h"
 
 /**
- * array_iterator - iterates an array.
+ * array_iterator - function that iterates
  * @array: array to be iterated.
- * @size: size of the array
- * @action: pointer to the function to use.
+ * @size: size of array
+ * @action: pointer to function
  *
- * Return: void.
+ * Return: Nothing.
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
