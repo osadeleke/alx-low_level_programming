@@ -15,7 +15,7 @@ int (*get_op_func(char *s))(int a, int b)
 	new.f = NULL;
 
 	while (*new.op == '+' || *new.op == '-' || *new.op == '*'
-	|| *new.op == '/' || *new.op = '%')
+	|| *new.op == '/' || *new.op == '%')
 	{
 		new.f = (*new.op == '+') ? &op_add :
 			(*new.op == '-') ? &op_sub :
