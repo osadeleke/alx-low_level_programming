@@ -1,4 +1,5 @@
 #include "3-calc.h"
+#include <string.h>
 
 /**
  * main - function starts here.
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
 	/* Checks operator validity */
 	if ((*argv[2] != '+' && *argv[2] != '-'
 	&& *argv[2] != '*' && *argv[2] != '/'
-	&& *argv[2] != '%') || (strlen(argv[2] > 1))
+	&& *argv[2] != '%') || (strlen(argv[2]) > 1))
 	{
 		printf("Error\n");
 		return (99);
