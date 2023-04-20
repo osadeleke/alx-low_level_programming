@@ -1,4 +1,4 @@
-#include "3-calc_h"
+#include "3-calc.h"
 
 /**
  * main - function starts here.
