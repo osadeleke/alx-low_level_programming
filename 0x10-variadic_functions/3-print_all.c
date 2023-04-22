@@ -86,10 +86,7 @@ void print_all(const char * const format, ...)
 		if (j < 4)
 		{
 			data[j].f_pr(arg);
-			if (*(format + i + 1) != '\0')
-			{
-				printf(", ");
-			}
+			printf(", ");
 		}
 		i++;
 	}
