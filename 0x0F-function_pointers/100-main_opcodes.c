@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	int no_bytes = atoi(argv[1]);
+	int no_bytes;
 	int (*op_address)(int, char **) = main;
 	char *s = "";
 
@@ -21,6 +21,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+
+	no_bytes = atoi(argv[1]);
 
 	if (no_bytes < 0)
 	{
