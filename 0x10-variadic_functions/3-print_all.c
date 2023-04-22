@@ -62,6 +62,7 @@ void print_all(const char * const format, ...)
 {
 	va_list arg;
 	int i, j;
+	char *sep = "";
 
 	print_d data[] = {
 		{"c", print_char},
@@ -83,8 +84,9 @@ void print_all(const char * const format, ...)
 
 		if (j < 4)
 		{
+			printf("%s", sep);
 			data[j].f_pr(arg);
-			printf(", ");
+			sep = ", ";
 		}
 		i++;
 	}
