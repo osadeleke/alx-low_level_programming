@@ -7,8 +7,13 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *c_node = *head;
+	listint_t *c_node;
 	listint_t *n_node;
+
+	if (head == NULL)
+		return;
+
+	c_node = *head;
 
 	/** check if last node **/
 	while (c_node != NULL)
@@ -21,9 +26,6 @@ void free_listint2(listint_t **head)
 
 		/** make the next node pointer the current node **/
 		c_node = n_node;
-
-		/** assign NULL to the head **/
-		*head = NULL;
 	}
 
 }
