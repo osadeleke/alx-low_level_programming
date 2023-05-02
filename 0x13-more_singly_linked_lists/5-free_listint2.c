@@ -21,7 +21,9 @@ void free_listint2(listint_t **head)
 
 		/** make the next node pointer the current node **/
 		c_node = n_node;
+
+		/** assign NULL to the head **/
+		*head = NULL;
 	}
-	/** assign NULL to the head **/
-	*head = NULL;
+
 }
