@@ -5,7 +5,7 @@
  * @filename: a pointer to the file to be read.
  * @letters: number of letters it should read and print
  *
- * Return; number of letters it read and printed otherwise 0
+ * Return: number of letters it read and printed otherwise 0
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
