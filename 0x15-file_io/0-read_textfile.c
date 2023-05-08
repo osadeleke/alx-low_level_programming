@@ -21,13 +21,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (b == NULL)
 		return (0);
 
+	/** open file **/
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
 
+	/** process opened file **/
 	r = read(fd, b, letters);
 	w = write(STDOUT_FILENO, b, r);
 
+	/** close opened file **/
 	close(fd);
 
 	free(b);
