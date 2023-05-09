@@ -21,11 +21,11 @@ int create_file(const char *filename, char *text_content)
 	/** open file **/
 	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd == -1)
-		exit (-1);
+		exit(-1);
 	/** process open file **/
 	w = write(fd, text_content, length);
 	if (w == -1)
-		exit (-1);
+		exit(-1);
 	/** close file **/
 	close(fd);
 
