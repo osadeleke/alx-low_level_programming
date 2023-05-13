@@ -1,44 +1,6 @@
 #include "main.h"
 
 /**
- * file_from - to open and read file
- * @arg1: pointer to file
- * @ran: pointer to temp buffer
- *
- * Return: pointer to buffer
- */
-
-char *file_from(char *arg1, char *ran)
-{
-	int ff, cf;
-	ssize_t r;
-	ran = NULL;
-
-	ff = open(arg1, O_RDONLY);
-	if (ff == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", arg1);
-		exit(98);
-	}
-
-	r = read(ff, ran, 1024);
-	if (r == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", arg1);
-		exit(98);
-	}
-
-	cf = close(ff);
-	if (cf == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d\n", ff);
-		exit(100);
-	}
-
-	return (ran);
-}
-
-/**
  * main - copy content of a file to another file
  * @argc: number of arguments
  * @argv: pointer to an array of the arguments
@@ -48,16 +10,9 @@ char *file_from(char *arg1, char *ran)
 
 int main(int argc, char **argv)
 {
-<<<<<<< HEAD:0x15-file_io/cpold.c
 	int ff, ft, cf, ct, count;
 	ssize_t r, w;
-	char *buf;
-=======
-	int ft, ct, count;
-	ssize_t w;
-	char *reading;
-	char *ran;
->>>>>>> 5770bd9d23d7660ef04be301efee07c600b6f857:0x15-file_io/3-cpnewold.c
+	char buf[1024];
 
 	if (argc != 3)
 	{
@@ -65,23 +20,42 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 
-	reading = file_from(argv[1], ran);
+	ff = open(argv[1], O_RDONLY);
+	if (ff == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 
-	ft = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	ft = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (ft == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
-	while (reading[count])
+	r = read(ff, buf, 1024);
+	if (r == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+
+	while(buf[count])
 		count++;
 
-	w = write(ft, reading, count);
+	w = write(ft, buf, count);
 	if (w == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
+	}
+
+	cf = close(ff);
+	if (cf == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", ff);
+		exit(100);
 	}
 
 	ct = close(ft);
