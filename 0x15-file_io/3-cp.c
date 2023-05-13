@@ -11,7 +11,7 @@
 char *file_from(char *arg1, char *ran)
 {
 	int ff, cf;
-	ssize_t r;
+	ssize_t r, tb = 0;
 
 	ff = open(arg1, O_RDONLY);
 	if (ff == -1)
@@ -19,7 +19,10 @@ char *file_from(char *arg1, char *ran)
 		dprintf(2, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
-	r = read(ff, ran, 1024);
+	while((r = read(ff, ran + tb, 1024)) > 0)
+	{
+		tb = tb + r;
+	}
 	if (r == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", arg1);
@@ -47,7 +50,7 @@ int main(int argc, char **argv)
 	int ft, ct, count;
 	ssize_t w;
 	char *reading;
-	char ran[1024];
+	char ran[4096];
 
 	if (argc != 3)
 	{
