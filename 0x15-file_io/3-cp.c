@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 	int ft, ct, count;
 	ssize_t w;
 	char *reading;
-	char *ran;
+	char ran[1024];
 
 	if (argc != 3)
 	{
