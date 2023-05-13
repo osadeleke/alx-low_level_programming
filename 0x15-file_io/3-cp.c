@@ -19,27 +19,18 @@ char *file_from(char *arg1, char *ran)
 		dprintf(2, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
-
 	r = read(ff, ran, 1024);
 	if (r == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
-
-	if (ran == NULL)
-	{
-		close(ff);
-		exit(0);
-	}
-
 	cf = close(ff);
 	if (cf == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", ff);
 		exit(100);
 	}
-
 	return (ran);
 }
 
@@ -63,19 +54,13 @@ int main(int argc, char **argv)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	reading = file_from(argv[1], ran);
-
-	if (reading == NULL)
-		exit(0);
-
 	ft = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (ft == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-
 	while (reading[count])
 		count++;
 
@@ -85,13 +70,11 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-
 	ct = close(ft);
 	if (ct == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", ft);
 		exit(100);
 	}
-
 	return (1);
 }
