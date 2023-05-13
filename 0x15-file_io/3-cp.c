@@ -19,12 +19,6 @@ char *file_from(char *arg1, char *ran)
 		dprintf(2, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
-	r = read(ff, ran, 1);
-	if (r == 0)
-	{
-		exit(0);
-	}
-	lseek(ff, 0, SEEK_SET);
 	r = read(ff, ran, 1024);
 	if (r == -1)
 	{
