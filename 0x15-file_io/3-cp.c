@@ -27,6 +27,12 @@ char *file_from(char *arg1, char *ran)
 		exit(98);
 	}
 
+	if (ran == NULL)
+	{
+		close(ff);
+		exit(0);
+	}
+
 	cf = close(ff);
 	if (cf == -1)
 	{
