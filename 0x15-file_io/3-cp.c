@@ -19,7 +19,7 @@ char *file_from(char *arg1, char *ran)
 		dprintf(2, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
-	while((r = read(ff, ran + tb, 1024)) > 0)
+	while ((r = read(ff, ran + tb, 1024)) > 0)
 	{
 		tb = tb + r;
 	}
