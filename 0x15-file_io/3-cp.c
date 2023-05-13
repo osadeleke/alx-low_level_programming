@@ -16,14 +16,14 @@ char *file_from(char *arg1, char *ran)
 	ff = open(arg1, O_RDONLY);
 	if (ff == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s at open point\n", arg1);
+		dprintf(2, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
 
 	r = read(ff, ran, 1024);
 	if (r == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s at read point\n", arg1);
+		dprintf(2, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
 
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 	ft = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (ft == -1)
 	{
-		dprintf(2, "Error: Can't write to %s at open\n", argv[2]);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
 	w = write(ft, reading, count);
 	if (w == -1)
 	{
-		dprintf(2, "Error: Can't write to %s at writing\n", argv[2]);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
