@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * file_from - to open and read file
+ * @arg1: pointer to file
+ * @ran: pointer to temp buffer
+ *
+ * Return: pointer to buffer
+ */
+
 char *file_from(char *arg1, char *ran)
 {
 	int ff, cf;
@@ -59,7 +67,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	while(reading[count])
+	while (reading[count])
 		count++;
 
 	w = write(ft, reading, count);
