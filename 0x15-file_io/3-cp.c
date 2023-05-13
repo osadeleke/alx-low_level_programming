@@ -60,6 +60,9 @@ int main(int argc, char **argv)
 
 	reading = file_from(argv[1], ran);
 
+	if (reading == NULL)
+		exit(0);
+
 	ft = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (ft == -1)
 	{
