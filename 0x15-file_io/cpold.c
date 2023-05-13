@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 {
 	int ff, ft, cf, ct, count;
 	ssize_t r, w;
-	char buf[1024];
+	char *buf;
 
 	if (argc != 3)
 	{
