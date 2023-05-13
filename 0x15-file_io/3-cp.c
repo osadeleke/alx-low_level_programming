@@ -25,7 +25,6 @@ char *file_from(char *arg1, char *ran)
 	}
 	if (r == -1)
 	{
-		close(ff);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
@@ -71,7 +70,6 @@ int main(int argc, char **argv)
 	w = write(ft, reading, count);
 	if (w == -1)
 	{
-		close(ft);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
