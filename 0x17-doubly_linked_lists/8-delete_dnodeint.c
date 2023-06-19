@@ -62,9 +62,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	else
 	{
 		for (i = 1; i < index; i++)
-		{
 			current = current->next;
-		}
 		tmp = current->next;
 		current->next->next->prev = current;
 		current->next = current->next->next;
