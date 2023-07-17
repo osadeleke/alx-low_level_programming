@@ -13,7 +13,7 @@ void hash_table_print(const hash_table_t *ht)
 		return;
 	check = 0;
 	size = ht->size;
-	while(!ht->array[check])
+	while (!ht->array[check])
 	{
 		check++;
 	}
@@ -27,10 +27,10 @@ void hash_table_print(const hash_table_t *ht)
 		printf(", '%s': '%s'", node->key, node->value);
 		node = node->next;
 	}
-	for(i = check + 1; i < size; i++)
+	for (i = check + 1; i < size; i++)
 	{
 		node = ht->array[i];
-		while(node)
+		while (node)
 		{
 			printf(", '%s': '%s'", node->key, node->value);
 			node = node->next;
