@@ -29,7 +29,6 @@ hash_node_t *key_val(hash_node_t *node, const char *key, const char *value)
 		{
 			if (strcmp(key, tmp_tmp->key) == 0)
 			{
-				free(tmp_tmp->value);
 				tmp_tmp->value = strdup(value);
 				return (node);
 			}
@@ -56,7 +55,6 @@ hash_node_t *key_val(hash_node_t *node, const char *key, const char *value)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node;
 	const unsigned char *key_u;
 	unsigned long int index;
 
@@ -66,10 +64,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	key_u = (const unsigned char *) key;
 
 	index = hash_djb2(key_u) % ht->size;
-	node = key_val(ht->array[index], key, value);
-	if (node == NULL)
+
+	if (key_val(ht->array[index], key, value) == NULL)
 		return (0);
 
-	ht->array[index] = node;
+	ht->array[index] = key_val(ht->array[index], key, value);
 	return (1);
 }
