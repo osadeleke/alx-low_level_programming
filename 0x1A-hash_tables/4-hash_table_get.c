@@ -16,8 +16,7 @@ char *key_checker(hash_node_t *node, const char *key)
 	{
 		if (strcmp(key, tmp->key) == 0)
 			return (tmp->value);
-		else
-			tmp = tmp->next;
+		tmp = tmp->next;
 	}
 
 	return (NULL);
@@ -45,7 +44,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (ht->array[index] == NULL)
 		return (NULL);
-	
 
 	return (key_checker(ht->array[index], key));
 }
