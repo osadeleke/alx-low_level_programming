@@ -10,7 +10,7 @@
  */
 hash_node_t *key_val(hash_node_t *node, const char *key, const char *value)
 {
-	hash_node_t *tmp;
+	hash_node_t *tmp, *tmp_tmp;
 
 	if (node == NULL)
 	{
@@ -24,11 +24,21 @@ hash_node_t *key_val(hash_node_t *node, const char *key, const char *value)
 	}
 	else
 	{
+		tmp_tmp = node;
+		while (tmp_tmp != NULL)
+		{
+			if (strcmp(key, tmp_tmp->key) == 0)
+			{
+				tmp_tmp->value = strdup(value);
+				return (node);
+			}
+			tmp_tmp = tmp_tmp->next;
+		}
 		tmp = malloc(sizeof(hash_node_t));
 		if (tmp == NULL)
 			return (NULL);
-		tmp->key = (char *)key;
-		tmp->value = (char *)value;
+		tmp->key = strdup(key);
+		tmp->value = strdup(value);
 		tmp->next = node;
 		node = tmp;
 	}
