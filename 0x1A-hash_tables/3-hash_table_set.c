@@ -48,6 +48,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	const unsigned char *key_u;
 	unsigned long int index;
 
+	if (ht == NULL)
+		return (0);
+
 	key_u = (const unsigned char *) key;
 
 	index = hash_djb2(key_u) % ht->size;
