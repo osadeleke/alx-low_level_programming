@@ -1,4 +1,4 @@
-CC = gcc
+CC := gcc
 SRC := main.c school.c
 
 all:
